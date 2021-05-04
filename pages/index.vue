@@ -1,5 +1,6 @@
 <template>
   <div class="container">
+    <div id="fixed" >うんこ</div>
     <div id="wrap" class="parallax_box">
       <div id="wrapChild" class="parallax_content img_bg_01">CONあTENT1</div>
       <div id="wrapChild" class="parallax_content img_bg_02">CONTENT2</div>
@@ -18,8 +19,6 @@ import Vue from 'vue'
 
 
 export default Vue.extend({
-
-
 
 
 
@@ -52,6 +51,22 @@ mounted () {
     getElTop(); // 位置を取得
     window.scrollTo(0, elTop[count]); // 現在表示中の画面位置へ
   });
+
+
+
+  let upBtn = <HTMLInputElement>document.getElementById('upBtn');
+  let downBtn = <HTMLInputElement>document.getElementById('downBtn');
+
+  // upBtn.addEventListener('click', function() {
+    
+  //     console.log('クリックされました！');
+    
+  // }, false);
+  // downBtn.addEventListener('click', function() {
+    
+  //     console.log('クリックされました！');
+    
+  // }, false);
 
   // マウスホイールのときの処理
   wrap.addEventListener('wheel', function (e) {
@@ -90,6 +105,12 @@ mounted () {
 
 <style>
 
-
+#fixed {
+position: fixed; /* 要素の位置を固定する */
+bottom: 0; /* 基準の位置を画面の一番下に指定する */
+right: 0; /* 基準の位置を画面の一番右に指定する */
+width: 300px; /* 幅を指定する */
+border: 3px solid #326693; /* ボーダーを指定する */
+}
 
 </style>
