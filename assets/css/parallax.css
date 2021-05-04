@@ -1,0 +1,33 @@
+.parallax_content{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: 50rem;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-attachment: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  .img_bg_01{
+    background-image: url("https://unsplash.it/1100/1000");
+    width: 100%;
+  }
+  .img_bg_02{
+    background-image: url("https://unsplash.it/1000/1100");
+    width: 100%;
+  }
+  .img_bg_03{
+    background-image: url("https://unsplash.it/1200/1000");
+    width: 100%;
+  }
+  .img_bg_04{
+    background-image: url("https://unsplash.it/1000/1200");
+    width: 100%;
+  }
+  .img_bg_05{
+    background-image: url("https://unsplash.it/1000/1000");
+    width: 100%;
+  }
