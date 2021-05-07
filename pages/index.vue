@@ -1,12 +1,47 @@
 <template>
   <div class="container">
-    <div id="fixed" >うんこ</div>
+
+    <div id=fixedBox>
+      <a id="fixed" href="" class="hbtn hb-fill-on"> UP </a>
+      <a id="fixed" href="" class="hbtn hb-fill-on">DOWN</a>
+    </div>
+
     <div id="wrap" class="parallax_box">
-      <div id="wrapChild" class="parallax_content img_bg_01">CONあTENT1</div>
-      <div id="wrapChild" class="parallax_content img_bg_02">CONTENT2</div>
-      <div id="wrapChild" class="parallax_content img_bg_03">CONTENT3</div>
-      <div id="wrapChild" class="parallax_content img_bg_04">CONTENT4</div>
-      <div id="wrapChild" class="parallax_content img_bg_05">CONTENT5</div>
+
+      <div id="wrapChild" class="parallax_content img_bg_01">
+
+        <div class="myName">DeraPomBe</div>
+
+      </div>
+      <div id="wrapChild" class="parallax_content img_bg_02">
+
+        <div class="myName">誰？</div>
+
+        <!-- <div class="btnMenu">
+          <a href="#" class="hbtn hb-fill-on">Fade In</a>
+          <a href="#" class="hbtn hb-fill-on">Fade In</a>
+          <a href="#" class="hbtn hb-fill-on">Fade In</a>
+          <a href="#" class="hbtn hb-fill-on">Fade In</a>
+          <a href="#" class="hbtn hb-fill-on">Fade In</a>
+       </div> -->
+
+
+
+       <!-- <div class="commentSpace">a</div> -->
+      </div>
+      <div id="wrapChild" class="parallax_content img_bg_03">
+
+    <div class="myName">DeraPomBe</div>
+
+      </div>
+      <div id="wrapChild" class="parallax_content img_bg_04">
+
+        <div class="myName">DeraPomBe</div>
+      </div>
+      <div id="wrapChild" class="parallax_content img_bg_05">
+
+        <div class="myName">DeraPomBe</div>
+      </div>
     </div>
   </div>
 </template>
@@ -16,9 +51,9 @@ import Vue from 'vue'
 
 
 
-
-
 export default Vue.extend({
+
+
 
 
 
@@ -101,16 +136,113 @@ mounted () {
 
 })
 
+
+
 </script>
 
 <style>
 
-#fixed {
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+
+#fixedBox{
 position: fixed; /* 要素の位置を固定する */
-bottom: 0; /* 基準の位置を画面の一番下に指定する */
-right: 0; /* 基準の位置を画面の一番右に指定する */
-width: 300px; /* 幅を指定する */
-border: 3px solid #326693; /* ボーダーを指定する */
+
+/* left:50%; */
+top:10%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+width: 100%; /* 幅を指定する */
+z-index: 10;
+}
+
+
+#fixed {
+width:10rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+
+#wrapChild {
+  position:relative ;
+  display: block;
+  z-index: 0;
+  /* flex-flow: column; */
+}
+
+
+.myName {
+    position:absolute ;
+ font-size:5rem;
+  display: flex;
+  top: 30%;
+  background-color: rgba(0, 0, 0, 0.275);
+  color: antiquewhite;
+  font-family:'Indie Flower', cursive;
+  height: 20vh;
+  width: 100%;
+  /* padding-top: 50vh; */
+  /* padding-left: 50vh; */
+  /* padding-bottom: 50vh; */
+  /* padding-right: 50vh; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* background-attachment: fixed; */
+  /* background-position: center; */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+
+z-index: 1;
+
+}
+
+
+.btnMenu {
+  position:absolute ;
+  display: flex;
+  bottom: 50%;
+
+  height: 20vh;
+  width: 100%;
+  /* padding-top: 50vh; */
+  /* padding-left: 50vh; */
+  /* padding-bottom: 50vh; */
+  /* padding-right: 50vh; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* background-attachment: fixed; */
+  /* background-position: center; */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+
+  z-index: 2;
+}
+
+.commentSpace {
+  position:absolute ;
+  display: flex;
+  bottom: 0px;
+  background-color: brown;
+  height: 20vh;
+  width: 100%;
+  /* padding-top: 50vh; */
+  /* padding-left: 50vh; */
+  /* padding-bottom: 50vh; */
+  /* padding-right: 50vh; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  /* background-attachment: fixed; */
+  /* background-position: center; */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+
+  z-index: 3;
 }
 
 </style>
