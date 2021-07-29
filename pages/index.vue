@@ -1,46 +1,47 @@
 <template>
   <div class="container">
 
-    <div id=fixedBox>
-      <a id="fixed" href="" class="hbtn hb-fill-on"> UP </a>
-      <a id="fixed" href="" class="hbtn hb-fill-on">DOWN</a>
+    <div class=fixedBox>
+        <button id="upBtn" class="hbtn hb-fill-top-bg fixed" type="button"> 
+            <div class="">UP</div>  
+        </button>
+        <button id="downBtn" class="hbtn hb-fill-bottom-bg fixed" type="button">
+            <div class="">DOWN</div>  
+        </button>
     </div>
 
     <div id="wrap" class="parallax_box">
 
       <div id="wrapChild" class="parallax_content img_bg_01">
 
-        <div class="myName">DeraPomBe</div>
+        <!-- このWrapChild内に要素を入れる -->
+
+
+        <!-- <div class="myName fade-in ">  </div> -->
+        <div class="context myName fade-in">DeraPomBe's Portforio</div>
 
       </div>
       <div id="wrapChild" class="parallax_content img_bg_02">
 
-        <div class="myName">誰？</div>
-
-        <!-- <div class="btnMenu">
-          <a href="#" class="hbtn hb-fill-on">Fade In</a>
-          <a href="#" class="hbtn hb-fill-on">Fade In</a>
-          <a href="#" class="hbtn hb-fill-on">Fade In</a>
-          <a href="#" class="hbtn hb-fill-on">Fade In</a>
-          <a href="#" class="hbtn hb-fill-on">Fade In</a>
-       </div> -->
+        <!-- このWrapChild内に要素を入れる -->
+        
 
 
-
-       <!-- <div class="commentSpace">a</div> -->
       </div>
       <div id="wrapChild" class="parallax_content img_bg_03">
 
-    <div class="myName">DeraPomBe</div>
+        <!-- このWrapChild内に要素を入れる -->
 
       </div>
       <div id="wrapChild" class="parallax_content img_bg_04">
 
-        <div class="myName">DeraPomBe</div>
+        <!-- このWrapChild内に要素を入れる -->
+
       </div>
       <div id="wrapChild" class="parallax_content img_bg_05">
 
-        <div class="myName">DeraPomBe</div>
+        <!-- このWrapChild内に要素を入れる -->
+
       </div>
     </div>
   </div>
@@ -54,7 +55,14 @@ import Vue from 'vue'
 export default Vue.extend({
 
 
-
+  methods: {
+      Down() {
+        
+      },
+      Up() {
+        
+      }
+    },
 
 
 mounted () {
@@ -64,7 +72,7 @@ mounted () {
     elements = document.querySelectorAll('#wrap #wrapChild'), // 1画面分スクロールさせる要素
     elRect : DOMRect[] = [], // 要素の位置情報を取得するための配列
     elTop : number[] = [], // 要素の位置を入れるための配列
-    count = 0, // 
+    count = 0, // 現在の位置
     wheelFlag = false;
   
   // 各要素の位置を取得
@@ -86,22 +94,6 @@ mounted () {
     getElTop(); // 位置を取得
     window.scrollTo(0, elTop[count]); // 現在表示中の画面位置へ
   });
-
-
-
-  let upBtn = <HTMLInputElement>document.getElementById('upBtn');
-  let downBtn = <HTMLInputElement>document.getElementById('downBtn');
-
-  // upBtn.addEventListener('click', function() {
-    
-  //     console.log('クリックされました！');
-    
-  // }, false);
-  // downBtn.addEventListener('click', function() {
-    
-  //     console.log('クリックされました！');
-    
-  // }, false);
 
   // マウスホイールのときの処理
   wrap.addEventListener('wheel', function (e) {
@@ -132,7 +124,62 @@ mounted () {
       },20); // スクロールまで時間差をつけて慣性スクロール対策
     }
   });
-},
+
+
+  let upBtn = <HTMLInputElement>document.getElementById('upBtn');
+  let downBtn = <HTMLInputElement>document.getElementById('downBtn');
+
+  upBtn.addEventListener('click', function(e) {
+    
+    e.preventDefault(); // デフォルトのスクロール動作を削除
+        if (!wheelFlag) { // wheelFlagがfalseのときに発動
+        wheelFlag = true; // wheelFlagをtrueにして無駄に発動しないように
+
+            if (count <= 0) { // 0より小さくならないようにcountが0以下なら
+            count = 0; // countを0とする
+            } else {
+            count--; // それまではcountをマイナスしていく
+            }
+        
+        setTimeout(function () { //0.8秒後にwheelFlagをfalseにして次のページめくれるように
+            wheelFlag = false;
+        },100);
+        setTimeout(function () {
+            window.scrollTo({ // count番目の要素へスクロール
+            top: elTop[count],
+            behavior: 'smooth',
+            });
+        },20); // スクロールまで時間差をつけて慣性スクロール対策
+        }
+    
+  }, false);
+  downBtn.addEventListener('click', function(e) {
+    
+e.preventDefault(); // デフォルトのスクロール動作を削除
+    if (!wheelFlag) { // wheelFlagがfalseのときに発動
+      wheelFlag = true; // wheelFlagをtrueにして無駄に発動しないように
+
+        if (count >= elements.length - 1) { // 要素の数以上に増えないようにcountが要素の数を超えたら
+          count = elements.length - 1; // countを要素の数とする
+        } else {
+          count++; // それまではcountをプラス
+        }
+
+      setTimeout(function () { //0.8秒後にwheelFlagをfalseにして次のページめくれるように
+        wheelFlag = false;
+      },100);
+      setTimeout(function () {
+        window.scrollTo({ // count番目の要素へスクロール
+          top: elTop[count],
+          behavior: 'smooth',
+        });
+      },20); // スクロールまで時間差をつけて慣性スクロール対策
+    }
+    
+  }, false);
+
+
+  },
 
 })
 
@@ -145,24 +192,26 @@ mounted () {
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 
-#fixedBox{
-position: fixed; /* 要素の位置を固定する */
-
-/* left:50%; */
-top:10%;
+.fixedBox{
+  position: fixed; /* 要素の位置を固定する */
+  /* left:50%; */
+  top:93%;
   justify-content: center;
   align-items: center;
   text-align: center;
-width: 100%; /* 幅を指定する */
-z-index: 10;
+  width: 100%; /* 幅を指定する */
+   
+  z-index: 10;
 }
 
 
-#fixed {
-width:10rem;
+.fixed {
+  width:40%;
+  
   justify-content: center;
   align-items: center;
   text-align: center;
+  background: rgba(0, 0, 0, 0.575);
 }
 
 
@@ -175,29 +224,56 @@ width:10rem;
 
 
 .myName {
-    position:absolute ;
- font-size:5rem;
+  position: fixed;
   display: flex;
-  top: 30%;
-  background-color: rgba(0, 0, 0, 0.275);
-  color: antiquewhite;
-  font-family:'Indie Flower', cursive;
-  height: 20vh;
+
+  top: 25%;
+
+  background-color: rgba(0, 0, 0, 0.575);
+
+  height: 10rem;
   width: 100%;
-  /* padding-top: 50vh; */
-  /* padding-left: 50vh; */
-  /* padding-bottom: 50vh; */
-  /* padding-right: 50vh; */
+
   justify-content: center;
   align-items: center;
   text-align: center;
-  /* background-attachment: fixed; */
-  /* background-position: center; */
-  /* background-size: cover; */
-  /* background-repeat: no-repeat; */
 
-z-index: 1;
+  z-index: 10;
 
+}
+
+.commentSpace {
+  position:absolute ;
+  display: flex;
+
+  bottom: 0%;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  height: 50vh;
+  width: 50%;
+
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+
+  z-index: 3;
+}
+
+.context {
+  position: fixed;
+  /* font */
+  font-size: 7vw;
+  color: antiquewhite;
+  font-family:'Indie Flower', cursive;
+
+
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  z-index: 20;
 }
 
 
@@ -221,28 +297,6 @@ z-index: 1;
   /* background-repeat: no-repeat; */
 
   z-index: 2;
-}
-
-.commentSpace {
-  position:absolute ;
-  display: flex;
-  bottom: 0px;
-  background-color: brown;
-  height: 20vh;
-  width: 100%;
-  /* padding-top: 50vh; */
-  /* padding-left: 50vh; */
-  /* padding-bottom: 50vh; */
-  /* padding-right: 50vh; */
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  /* background-attachment: fixed; */
-  /* background-position: center; */
-  /* background-size: cover; */
-  /* background-repeat: no-repeat; */
-
-  z-index: 3;
 }
 
 </style>
