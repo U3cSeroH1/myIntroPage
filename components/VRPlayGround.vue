@@ -7,14 +7,16 @@
         <div class="normalcontextsmall">enhancing VR experience</div>
       </div>
     </div>
-    <iframe
-      class="videoSpace"
-      src="https://www.youtube.com/embed/hKE-ComPz_E"
-      title="YouTube video player"
-      frameborder="0"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-      allowfullscreen
-    ></iframe>
+    <div class="videoSpaceBox">
+      <iframe
+        class="videoSpace"
+        src="https://www.youtube.com/embed/hKE-ComPz_E"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
   </div>
 </template>
 

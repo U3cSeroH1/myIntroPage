@@ -14,7 +14,7 @@
   background-repeat: no-repeat;
 }
 .img_bg_01{
-  background-image: url("https://unsplash.it/1600/1000");
+  background-image: url("~/static/DSC_0082.JPG");
   /* width: 100%; */
 }
 .img_bg_02{
@@ -31,5 +31,9 @@
 }
 .img_bg_05{
   background-image: url("~/static/create/OculusScreenshot1627626639.jpeg");
+  /* width: 100%; */
+}
+.img_bg_06{
+  background-color: black;
   /* width: 100%; */
 }

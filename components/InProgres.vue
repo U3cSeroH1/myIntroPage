@@ -8,7 +8,8 @@
       <a
         href="https://github.com/U3cSeroH1/ZISSEN_VR_GAME/tree/sushi_blade"
         class="btnMenusmall hbtn hb-fill-middle2-bg"
-        >Take a peek...!</a
+      >
+        <div class="normalcontextInButtonsmall">Take a peek...!</div></a
       >
     </div>
   </div>

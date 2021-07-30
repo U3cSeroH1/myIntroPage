@@ -11,7 +11,7 @@
         href="https://vrchat.com/home/launch?worldId=wrld_45e4e23b-257a-4f87-948f-3496df446556"
         class="btnMenu hbtn hb-fill-middle2-bg"
       >
-        <div class="normalcontext">DIVE into WORLD!</div>
+        <div class="normalcontextInButton">DIVE into WORLD!</div>
       </a>
     </div>
   </div>

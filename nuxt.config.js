@@ -25,7 +25,7 @@ export default {
 
     '@/assets/css/hoverbuttons.css',
     '@/assets/css/parallax.css',
-    '@/assets/css/fadein.css',
+    '@/assets/css/misc.css',
     '@/assets/css/gridbox.css',
   ],
 
