@@ -2,10 +2,10 @@
   <div class="container">
 
     <div class=fixedBox>
-        <button id="upBtn" class="hbtn hb-fill-top-bg fixed" type="button" v-on:click="buttonClickedUP"> 
+        <button id="upBtn" class="hbtn hb-fill-top-bg fixed" type="button" v-on:click="buttonClicked(true)"> 
             <div class="">UP</div>  
         </button>
-        <button id="downBtn" class="hbtn hb-fill-bottom-bg fixed" type="button" v-on:click="buttonClickedDOWN">
+        <button id="downBtn" class="hbtn hb-fill-bottom-bg fixed" type="button" v-on:click="buttonClicked(false)">
             <div class="">DOWN</div>  
         </button>
     </div>
@@ -87,7 +87,6 @@
             </div>
         </div>
         <div id="wrapChild" class="parallax_content img_bg_02">
-
         <!-- このWrapChild内に要素を入れる -->
         <div class="commentSpace" >
             <div class="normalcontext">Multiplayer FPS on Unity
@@ -98,13 +97,12 @@
             </div>
             <div class="btnBox">
                 <a href="https://u3cseroh1.github.io/dpb_FPS_Photon2/" class="btnMenu hbtn hb-fill-middle2-bg">
-                
-                    <div class="normalcontext">Play NOW!</div>
-                
+                    <div class="normalcontext">
+                        Play NOW!
+                    </div>
                 </a>
             </div>
         </div>
-
         <div id="wrapChild" class="parallax_content img_bg_03">
         <!-- このWrapChild内に要素を入れる -->
         <div class="commentSpace" >
@@ -114,9 +112,7 @@
                 </div>
             </div>
         </div>
-
         <iframe class="videoSpace" src="https://www.youtube.com/embed/hKE-ComPz_E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-
         </div>
         <div id="wrapChild" class="parallax_content img_bg_04">
         <!-- このWrapChild内に要素を入れる -->
@@ -133,9 +129,6 @@
                 </a>
             </div>
         </div>
-
-
-
         <div id="wrapChild" class="parallax_content img_bg_05">
         <!-- このWrapChild内に要素を入れる -->
             <div class="commentSpaceUP" >
@@ -151,25 +144,20 @@
 
 <script lang="ts">
 import Vue from 'vue'
-
 export default Vue.extend({
-
     data() {
         return {
-            wrap: <HTMLInputElement>document.getElementById('wrap'),
             elements: document.querySelectorAll('#wrap #wrapChild'), // 1画面分スクロールさせる要素
             elRect: [] as DOMRect[], // 要素の位置情報を取得するための配列
             elTop: [] as number[], // 要素の位置を入れるための配列
             count: 0, // 現在の位置
             wheelFlag : false,
-
             upBtn : <HTMLInputElement>document.getElementById('upBtn'),
             downBtn : <HTMLInputElement>document.getElementById('downBtn'),    
         }
     },
 
     methods:{
-
         getElTop() {          
             for (var i = 0; i < this.elements.length; i++) { // 要素の数ループ
                 this.elRect.push(this.elements[i].getBoundingClientRect()); // 要素の位置情報を配列へ   
@@ -178,94 +166,66 @@ export default Vue.extend({
                 this.elTop.push(this.elRect[i].top + window.scrollY); // 要素の位置を配列へ
             }
         },
-
         resizeFunction () {
             this.elRect = []; // 位置情報の配列を一旦空に
             this.elTop = []; // 位置の配列を一旦空に
             this.getElTop(); // 位置を取得
             window.scrollTo(0, this.elTop[this.count]); // 現在表示中の画面位置へ
         },
-
         wheelFunction (e: WheelEvent) {
             e.preventDefault(); // デフォルトのスクロール動作を削除
-
-            if (!this.wheelFlag) { // wheelFlagがfalseのときに発動
-                this.wheelFlag = true; // wheelFlagをtrueにして無駄に発動しないように
-                if (e.deltaY > 0) { // ホイールが下方向だったら
-                    if (this.count >= this.elements.length - 1) { // 要素の数以上に増えないようにcountが要素の数を超えたら
-                    this.count = this.elements.length - 1; // countを要素の数とする
-                    } else {
-                    this.count++; // それまではcountをプラス
-                    }
-                } else if (e.deltaY < 0) { // ホイールが上方向だったら
-                    if (this.count <= 0) { // 0より小さくならないようにcountが0以下なら
-                    this.count = 0; // countを0とする
-                    } else {
-                    this.count--; // それまではcountをマイナスしていく
-                    }
-                }
-                setTimeout(this.wheelFlagFalse,800);
-                setTimeout(this.wheelInertiaMeasures,20); // スクロールまで時間差をつけて慣性スクロール対策
+            if (this.wheelFlag) { // wheelFlagがfalseのときに発動
+                return;
             }
-        },
 
-        buttonClickedUP(e: MouseEvent) {
-            e.preventDefault(); // デフォルトのスクロール動作を削除
-            if (!this.wheelFlag) { // wheelFlagがfalseのときに発動
-                this.wheelFlag = true; // wheelFlagをtrueにして無駄に発動しないように
-                if (this.count <= 0) { // 0より小さくならないようにcountが0以下なら
-                    this.count = 0; // countを0とする
-                } else {
-                    this.count--; // それまではcountをマイナスしていく
-                }
-                setTimeout(this.wheelFlagFalse,100);
-                setTimeout(this.wheelInertiaMeasures,20); // スクロールまで時間差をつけて慣性スクロール対策
+            this.wheelFlag = true; // wheelFlagをtrueにして無駄に発動しないように
+            if (e.deltaY > 0 && (this.count < this.elements.length - 1)) { // 要素の数以上に増えないようにcountが要素の数を超えたら
+                this.count++; // それまではcountをプラス
             }
-        },
-
-        buttonClickedDOWN(e: MouseEvent) {
-            e.preventDefault(); // デフォルトのスクロール動作を削除
-            if (!this.wheelFlag) { // wheelFlagがfalseのときに発動
-                this.wheelFlag = true; // wheelFlagをtrueにして無駄に発動しないように
-                if (this.count >= this.elements.length - 1) { // 要素の数以上に増えないようにcountが要素の数を超えたら
-                    this.count = this.elements.length - 1; // countを要素の数とする
-                } else {
-                    this.count++; // それまではcountをプラス
-                }
-                setTimeout(this.wheelFlagFalse,100);
-                setTimeout(this.wheelInertiaMeasures,20); // スクロールまで時間差をつけて慣性スクロール対策
+            if (e.deltaY < 0 && (this.count > 0)) { // 0より小さくならないようにcountが0以下なら
+                this.count--; // それまではcountをマイナスしていく
             }
+            
+            setTimeout(this.wheelFlagFalse,800);
+            setTimeout(this.wheelInertiaMeasures,20); // スクロールまで時間差をつけて慣性スクロール対策
         },
+        buttonClicked(UPorDOWN: Boolean) {
+            if (this.wheelFlag) { // wheelFlagがfalseのときに発動
+                return;
+            }
 
+            this.wheelFlag = true; // wheelFlagをtrueにして無駄に発動しないように
+
+            if (this.count > 0 && UPorDOWN) { // 0より小さくならないようにcountが0以下なら
+                this.count--; // それまではcountをマイナスしていく
+            }
+            if (this.count < this.elements.length - 1 && !UPorDOWN) { // 要素の数以上に増えないようにcountが要素の数を超えたら
+                this.count++; // それまではcountをプラス
+            }
+            setTimeout(this.wheelFlagFalse,100);
+            setTimeout(this.wheelInertiaMeasures,20); // スクロールまで時間差をつけて慣性スクロール対策
+        },
         wheelFlagFalse () { //0.8秒後にwheelFlagをfalseにして次のページめくれるように
             this.wheelFlag = false;
         },
-
         wheelInertiaMeasures () {
             window.scrollTo({ // count番目の要素へスクロール
                 top: this.elTop[this.count],
                 behavior: 'smooth',
             });
         },
-        
         getElements() {
-
             this.elements = document.querySelectorAll('#wrap #wrapChild') // 1画面分スクロールさせる要素
-
         },
-
     },
 
     mounted () {
         // 各要素の位置を取得(スクロールのためのDOM取得方法)
         this.getElements() 
-        
         // 各要素の位置を取得
         this.getElTop();
-    
         // 画面リサイズのときの処理
         window.addEventListener('resize', this.resizeFunction);
-
         // マウスホイールのときの処理
         window.addEventListener('wheel', this.wheelFunction, {passive: false});
     },
@@ -273,7 +233,6 @@ export default Vue.extend({
 </script>
 
 <style>
-
 @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 
 .fixedBox{
@@ -296,13 +255,13 @@ export default Vue.extend({
     text-align: center;
     background: rgba(0, 0, 0, 0.775);
     font-family:'Indie Flower', cursive;
-  
 }
 
 
 #wrapChild {
     position:relative ;
     display: block;
+
     z-index: 0;
     /* flex-flow: column; */
 }
@@ -326,7 +285,6 @@ export default Vue.extend({
     z-index: 10;
 
     transform:rotate(-30deg);
-
 }
 
 .myNameIcon {
@@ -348,9 +306,8 @@ export default Vue.extend({
     background-position: center;
     background-size:6rem auto;
     background-repeat: no-repeat;
+    
     z-index: 8;
-
-
 }
 
 .box {
@@ -365,7 +322,6 @@ export default Vue.extend({
     font-family:'Indie Flower', cursive;
 
     z-index: 1230;
-  
 }
 
 .commentSpace {
@@ -393,11 +349,6 @@ export default Vue.extend({
     height: 30%;
     width: 100%;
 
-    /* justify-content: center;
-    align-items: center;
-    text-align: center; */
-
-
     z-index: 3;
 }
 
@@ -412,12 +363,6 @@ export default Vue.extend({
     height: 60%;
     width: 100%;
     margin:0 auto;
-
-
-    /* justify-content: center;
-    align-items: center;
-    text-align: center; */
-
 
     z-index: 0;
 }
@@ -519,7 +464,7 @@ export default Vue.extend({
     top: 40%;
     height: 10rem;
     width: 50vw;
-        font-size: 5rem;
+    font-size: 5rem;
     margin:0 auto;
     font-family:'Indie Flower', cursive;
     justify-content: center;
@@ -538,7 +483,7 @@ export default Vue.extend({
     top: 100%;
     height: 5rem;
     width: 25vw;
-        font-size: 2rem;
+    font-size: 2rem;
     margin:0 auto;
     font-family:'Indie Flower', cursive;
     justify-content: center;
