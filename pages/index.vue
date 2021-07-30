@@ -2,6 +2,7 @@
   <div class="container">
     <div class="fixedBox">
       <button
+        v-if="count > 0"
         id="upBtn"
         class="hbtn hb-fill-top-bg fixed"
         type="button"
@@ -10,6 +11,7 @@
         UP
       </button>
       <button
+        v-if="count < this.elements.length - 1"
         id="downBtn"
         class="hbtn hb-fill-bottom-bg fixed"
         type="button"
@@ -36,8 +38,6 @@ export default Vue.extend({
       elTop: [] as number[], // 要素の位置を入れるための配列
       count: 0, // 現在の位置
       wheelFlag: false,
-      upBtn: <HTMLInputElement>document.getElementById("upBtn"),
-      downBtn: <HTMLInputElement>document.getElementById("downBtn"),
     };
   },
 
@@ -105,6 +105,11 @@ export default Vue.extend({
     window.addEventListener("resize", this.resizeFunction);
     // マウスホイールのときの処理
     window.addEventListener("wheel", this.wheelFunction, { passive: false });
+  },
+
+  beforeDestroy() {
+    window.removeEventListener("resize", this.resizeFunction);
+    window.removeEventListener("wheel", this.wheelFunction);
   },
 });
 </script>
