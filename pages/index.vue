@@ -20,14 +20,78 @@
         <!-- <div class="myName fade-in ">  </div> -->
         <div class="context myName fade-in">DeraPomBe's Portforio</div>
 
+        <div class="gridcontainer">
+            <div class="grid">
+                <div class="text">
+                    <h2>Grid Layout</h2>
+                    <p>This is CSS grid-layout Sample.</p>
+                </div>
+            </div>
+            <div class="grid">
+                <img class="gridimg" src="~/static/create/01ESZ37QD6WQ00JQBME08GW3A3.png">
+            </div>
+            <div class="grid">
+                <img class="gridimg" src="~/static/create/01F8KQAT4A62VX7NGXE7HAM1D5.jpeg">
+            </div>
+                        <div class="grid">
+                <img class="gridimg" src="~/static/create/12d65f32ac17e7b163df71bac9da596f.jpg">
+            </div>
+                        <div class="grid">
+                <img class="gridimg" src="~/static/create/9f52c275e48e26617d81995c5ddff47c.png">
+            </div>
+                        <div class="grid">
+                <img class="gridimg" src="~/static/create/12d65f32ac17e7b163df71bac9da596f.jpg">
+            </div>
+                                    <div class="grid">
+                <img class="gridimg" src="~/static/create/a6451e7aac0469ec1e7ca15ab24bfbc6.jpg">
+            </div>
+                                    <div class="grid">
+                <img class="gridimg" src="~/static/create/aef9df6652ee2b16c3f123d36fe3d284.png">
+            </div>
+                                    <div class="grid">
+                <img class="gridimg" src="~/static/create/c07a79759cb901350fd9428e386f26b1.jpg">
+            </div>
+                                    <div class="grid">
+                <img class="gridimg" src="~/static/create/ce0c91ba9ba27af8f4181473bb16bcd0.png">
+            </div>
+            <div class="grid">
+                <div class="text">
+                    <h2>SiTest</h2>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="pic">
+                    <h2>Sports</h2>
+                    <img class="gridimg" src="~/static/create/e20706bde0bcba86eb6c42af262af93a.png">
+                    <p>Sports Picture</p>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="text">
+                    <h2>Lorem ipsum</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                </div>
+            </div>
+            <div class="grid">
+                <div class="pic">
+                    <h2>Nature</h2>
+                    <img class="gridimg" src="~/static/create/f533eb347997fe40d11741d06f9fd76c.png">
+                    <p>Nature Picture</p>
+                </div>
+            </div>
+            <div class="grid">
+                <img class="gridimg" src="~/static/create/fb8404eae7b0b2ef616ed8637a13588b.png">
+            </div>
+        </div>
+
       </div>
       <div id="wrapChild" class="parallax_content img_bg_02">
 
         <!-- このWrapChild内に要素を入れる -->
+              
         
 
-
-      </div>
+    </div>
       <div id="wrapChild" class="parallax_content img_bg_03">
 
         <!-- このWrapChild内に要素を入れる -->
@@ -72,7 +136,7 @@ mounted () {
     elements = document.querySelectorAll('#wrap #wrapChild'), // 1画面分スクロールさせる要素
     elRect : DOMRect[] = [], // 要素の位置情報を取得するための配列
     elTop : number[] = [], // 要素の位置を入れるための配列
-    count = 0, // 現在の位置
+    count : number = 0, // 現在の位置
     wheelFlag = false;
   
   // 各要素の位置を取得
@@ -179,6 +243,7 @@ e.preventDefault(); // デフォルトのスクロール動作を削除
   }, false);
 
 
+
   },
 
 })
@@ -211,7 +276,9 @@ e.preventDefault(); // デフォルトのスクロール動作を削除
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: rgba(0, 0, 0, 0.575);
+  background: rgba(0, 0, 0, 0.775);
+    font-family:'Indie Flower', cursive;
+  
 }
 
 
@@ -229,7 +296,7 @@ e.preventDefault(); // デフォルトのスクロール動作を削除
 
   top: 25%;
 
-  background-color: rgba(0, 0, 0, 0.575);
+  background-color: rgba(0, 0, 0, 0.775);
 
   height: 10rem;
   width: 100%;
@@ -239,6 +306,8 @@ e.preventDefault(); // デフォルトのスクロール動作を削除
   text-align: center;
 
   z-index: 10;
+
+    transform:rotate(-30deg);
 
 }
 
@@ -275,6 +344,17 @@ e.preventDefault(); // デフォルトのスクロール動作を削除
 
   z-index: 20;
 }
+
+  @media (max-width: 700px) {
+    .context {
+      font-size: 3rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .context {
+      font-size: 6rem;
+    }
+  }
 
 
 .btnMenu {
