@@ -41,3 +41,16 @@
       opacity: 1;
     }
   }
+
+  .poyopoyo:hover {
+    animation: poyopoyo 1s ease-out;
+    opacity: 1;
+  }
+  @keyframes poyopoyo {
+    0%, 20%, 40%, 60% {
+      transform: scale(1);
+    }
+    30%, 50% {
+      transform: scale(0.5);
+    }
+  }

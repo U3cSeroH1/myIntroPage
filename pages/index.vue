@@ -17,33 +17,48 @@
         <!-- このWrapChild内に要素を入れる -->
 
 
-        <!-- <div class="myName fade-in ">  </div> -->
+        <div class="box fade-in "> <a href="https://github.com/U3cSeroH1" class="myNameIcon poyopoyo"></a> </div>
+        
+
         <div class="context myName fade-in">DeraPomBe's Portforio</div>
 
+
+
         <div class="gridcontainer">
-            <div class="grid">
-                <div class="text">
-                    <h2>Grid Layout</h2>
-                    <p>This is CSS grid-layout Sample.</p>
-                </div>
-            </div>
+
             <div class="grid">
                 <img class="gridimg" src="~/static/create/01ESZ37QD6WQ00JQBME08GW3A3.png">
             </div>
             <div class="grid">
+                <div class="text">
+                    <h2>wanna be Engineer</h2>
+                    <p>a Engineer who is long long sleeping</p>
+                </div>
+            </div>
+            <div class="grid">
                 <img class="gridimg" src="~/static/create/01F8KQAT4A62VX7NGXE7HAM1D5.jpeg">
             </div>
-                        <div class="grid">
-                <img class="gridimg" src="~/static/create/12d65f32ac17e7b163df71bac9da596f.jpg">
+            <div class="grid">
+                <div class="pic">
+                    <h2>VRChat</h2>
+                    <img class="gridimg" src="~/static/create/12d65f32ac17e7b163df71bac9da596f.jpg">
+                    <p>creating world</p>
+                </div>
+                
             </div>
                         <div class="grid">
                 <img class="gridimg" src="~/static/create/9f52c275e48e26617d81995c5ddff47c.png">
             </div>
                         <div class="grid">
-                <img class="gridimg" src="~/static/create/12d65f32ac17e7b163df71bac9da596f.jpg">
+                <img class="gridimg" src="~/static/create/ccae212702f96708d94dc89aa6ef9638.png">
             </div>
                                     <div class="grid">
                 <img class="gridimg" src="~/static/create/a6451e7aac0469ec1e7ca15ab24bfbc6.jpg">
+            </div>
+            <div class="grid">
+                <div class="text">
+                    <h2>VR/Action</h2>
+                </div>
             </div>
                                     <div class="grid">
                 <img class="gridimg" src="~/static/create/aef9df6652ee2b16c3f123d36fe3d284.png">
@@ -54,29 +69,25 @@
                                     <div class="grid">
                 <img class="gridimg" src="~/static/create/ce0c91ba9ba27af8f4181473bb16bcd0.png">
             </div>
-            <div class="grid">
-                <div class="text">
-                    <h2>SiTest</h2>
-                </div>
-            </div>
+
             <div class="grid">
                 <div class="pic">
-                    <h2>Sports</h2>
+                    <h2>Unity</h2>
                     <img class="gridimg" src="~/static/create/e20706bde0bcba86eb6c42af262af93a.png">
-                    <p>Sports Picture</p>
+                    <p>inventory</p>
                 </div>
             </div>
             <div class="grid">
                 <div class="text">
-                    <h2>Lorem ipsum</h2>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                    <h2>Game & Web</h2>
+                    <p>sugoi kakkoii eigo mitaini mieru bunsyou. eigo wakannaine. dakaratekitounikaiteiruyo. yappari eigo kakaretetara kakkoiizyan? souomotte kaitandayo korewo yondeiru anataha surudoi. mettya sugoi. yotabanasi dakedo kono po-toforio saitoha daitai nisyuukande tukuttayo nidoto typescript tukaitaku nainaa tte omotta. tehepero.</p>
                 </div>
             </div>
             <div class="grid">
                 <div class="pic">
-                    <h2>Nature</h2>
+                    <h2>Animation</h2>
                     <img class="gridimg" src="~/static/create/f533eb347997fe40d11741d06f9fd76c.png">
-                    <p>Nature Picture</p>
+                    <p>adding keyflame</p>
                 </div>
             </div>
             <div class="grid">
@@ -88,23 +99,57 @@
       <div id="wrapChild" class="parallax_content img_bg_02">
 
         <!-- このWrapChild内に要素を入れる -->
-              
+        <div class="commentSpace" >
+
+            <div class="normalcontext">VRChat World
+                <div class="normalcontextsmall">
+                    auto
+                </div>
+            
+            </div>
+
+        </div>
         
 
     </div>
       <div id="wrapChild" class="parallax_content img_bg_03">
 
         <!-- このWrapChild内に要素を入れる -->
+        <div class="commentSpace" >
+
+            <div class="normalcontext">VRChat World
+                <div class="normalcontextsmall">
+                    auto
+                </div>
+            
+            </div>
+
+        </div>
 
       </div>
       <div id="wrapChild" class="parallax_content img_bg_04">
 
         <!-- このWrapChild内に要素を入れる -->
+                <div class="commentSpace" >
+                    <div class="normalcontext">VRChat World
+                        <div class="normalcontextsmall">
+                            auto
+                        </div>
+                    
+                    </div>
+                </div>
+
+
 
       </div>
       <div id="wrapChild" class="parallax_content img_bg_05">
 
         <!-- このWrapChild内に要素を入れる -->
+                <div class="commentSpaceUP" >
+
+<div class="normalcontext">Work In Progress</div>
+
+                </div>
 
       </div>
     </div>
@@ -311,19 +356,78 @@ e.preventDefault(); // デフォルトのスクロール動作を削除
 
 }
 
-.commentSpace {
-  position:absolute ;
+.myNameIcon {
+  position: fixed;
   display: flex;
 
-  bottom: 0%;
+    background-image: url("~/static/github_logo_icon_143772.png");
 
-  background-color: rgba(255, 255, 255, 0.5);
-  height: 50vh;
-  width: 50%;
+    top: 40%;
+  height: 6rem;
+  width: 6rem;
+
+    margin:0 auto;
 
   justify-content: center;
   align-items: center;
   text-align: center;
+
+  background-position: center;
+    background-size:6rem auto;
+  background-repeat: no-repeat;
+  z-index: 8;
+
+
+}
+
+.box {
+      position: fixed;
+  display: flex;
+  width:100%;
+  
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: rgba(0, 0, 0, 0.775);
+    font-family:'Indie Flower', cursive;
+
+      z-index: 1230;
+  
+}
+
+.commentSpace {
+  position:absolute ;
+  display: flex;
+
+  background-color: rgba(0, 0, 0, 0.775);
+
+    top: 70%;
+
+  height: 30%;
+  width: 100%;
+
+  /* justify-content: center;
+  align-items: center;
+  text-align: center; */
+
+
+  z-index: 3;
+}
+
+.commentSpaceUP {
+  position:absolute ;
+  display: flex;
+
+  background-color: rgba(0, 0, 0, 0.775);
+
+    top:20%;
+
+  height: 20%;
+  width: 100%;
+
+  /* justify-content: center;
+  align-items: center;
+  text-align: center; */
 
 
   z-index: 3;
@@ -356,6 +460,61 @@ e.preventDefault(); // デフォルトのスクロール動作を削除
     }
   }
 
+.normalcontext {
+  position: absolute;
+  /* font */
+    font-size: 4rem;
+  color: antiquewhite;
+  font-family:'Indie Flower', cursive;
+
+height: 50%;
+
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  z-index: 20;
+}
+
+  @media (max-width: 700px) {
+    .context {
+      font-size: 3rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .context {
+      font-size: 6rem;
+    }
+  }
+
+  @media (max-width: 700px) {
+    .normalcontext {
+      font-size: 4rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .normalcontext {
+      font-size: 4rem;
+    }
+  }
+
+.normalcontextsmall {
+  position: absolute;
+  /* font */
+font-size: 3rem;
+  color: antiquewhite;
+  font-family:'Indie Flower', cursive;
+
+height: 40%;
+margin-top: -1rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  z-index: 20;
+}
 
 .btnMenu {
   position:absolute ;
