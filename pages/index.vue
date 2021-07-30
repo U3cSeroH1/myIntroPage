@@ -134,7 +134,7 @@
             <div class="commentSpaceUP" >
             <div class="normalcontext">Work<br> In Progress</div>
             <div class="btnBox">
-                <a href="https://vrchat.com/home/launch?worldId=wrld_45e4e23b-257a-4f87-948f-3496df446556" class="btnMenusmall hbtn hb-fill-middle2-bg">Take a peek...!</a>
+                <a href="https://github.com/U3cSeroH1/ZISSEN_VR_GAME/tree/sushi_blade" class="btnMenusmall hbtn hb-fill-middle2-bg">Take a peek...!</a>
             </div>
         </div>
       </div>
