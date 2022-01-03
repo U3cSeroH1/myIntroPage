@@ -1,0 +1,385 @@
+@import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
+
+.fade-in{ 
+    font-size:40px;
+  　opacity:0;
+    animation-name:sample01;
+    animation-duration:5s; 
+    animation-fill-mode: forwards;
+  }
+  @keyframes sample01 {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+       }
+  25% {
+   opacity: 0;
+   transform: translateY(-30px);
+  }
+    100%{
+      opacity: 1;
+       transform: translateY(0);
+    }
+  }
+
+   
+  .slide-in {
+    animation: slideIn 5s cubic-bezier(0.25, 1, 0.5, 1) 1 forwards;
+  }
+   
+  @keyframes slideIn {
+    0% {
+      transform: translateX(-500vw);
+      opacity: 0;
+    }
+    0% {
+        transform: translateX(-500vw);
+        opacity: 0;
+      }
+    100% {
+      transform: translateX(0);
+    }
+    40%,100% {
+      opacity: 1;
+    }
+  }
+
+  .poyopoyo:hover {
+    animation: poyopoyo 1s ease-out;
+    opacity: 1;
+  }
+  @keyframes poyopoyo {
+    0%, 20%, 40%, 60% {
+      transform: scale(1);
+    }
+    30%, 50% {
+      transform: scale(0.5);
+    }
+  }
+
+  .fixedBox {
+    position: fixed; /* 要素の位置を固定する */
+    /* left:50%; */
+    top: 93%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 100%; /* 幅を指定する */
+  
+    z-index: 10;
+  }
+  
+  .fixed {
+    width: 40%;
+  
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.775);
+    font-family: "Indie Flower", cursive;
+  }
+  
+  #wrapChild {
+    position: relative;
+    display: block;
+  
+    z-index: 0;
+    /* flex-flow: column; */
+  }
+  
+  .myName {
+    position: fixed;
+    display: flex;
+  
+    top: 25%;
+  
+    background-color: rgba(0, 0, 0, 0.775);
+  
+    height: 10rem;
+    width: 100%;
+  
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+    z-index: 10;
+  
+    transform: rotate(-30deg);
+  }
+  
+  .myNameIcon {
+    position: fixed;
+    display: flex;
+  
+    background-image: url("~/static/github_logo_icon_143772.png");
+  
+    top: 40%;
+    height: 6rem;
+    width: 6rem;
+  
+    margin: 0 auto;
+  
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+    background-position: center;
+    background-size: 6rem auto;
+    background-repeat: no-repeat;
+  
+    z-index: 8;
+  }
+  
+  .box {
+    position: fixed;
+    display: flex;
+    width: 100%;
+  
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.775);
+    font-family: "Indie Flower", cursive;
+  
+    z-index: 1230;
+  }
+  
+  .commentSpace {
+    position: absolute;
+    display: flex;
+  
+    background-color: rgba(0, 0, 0, 0.775);
+  
+    top: 70%;
+  
+    height: 30%;
+    width: 100%;
+  
+    z-index: 3;
+  }
+  
+  .commentSpaceUP {
+    position: absolute;
+    display: flex;
+  
+    background-color: rgba(0, 0, 0, 0.775);
+  
+    top: 20%;
+  
+    height: 30%;
+    width: 100%;
+  
+    z-index: 3;
+  }
+  
+  .videoSpaceBox {
+    position: absolute;
+    display: flex;
+  
+    top: 5%;
+  
+    height: 60%;
+    width: 100%;
+    margin: 0 auto;
+  
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+
+    z-index: 0;
+  }
+  .videoSpace {
+    position: absolute;
+    display: flex;
+  
+    top: 5%;
+  
+    height: 100%;
+    width: 70%;
+    margin: 0 auto;
+  
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+
+    z-index: 0;
+  }
+
+
+  .context {
+    position: fixed;
+    /* font */
+    font-size: 7vw;
+    color: antiquewhite;
+  
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+    z-index: 20;
+  }
+  
+  .normalcontext {
+    position: absolute;
+    /* font */
+    font-size: 4rem;
+    color: antiquewhite;
+  
+    height: 50%;
+  
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+    z-index: 20;
+  }
+  
+  @media (max-width: 700px) {
+    .context {
+      font-size: 3rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .context {
+      font-size: 6rem;
+    }
+  }
+  
+  @media (max-width: 600px) {
+    .normalcontext {
+      font-size: 3rem;
+    }
+  }
+  @media (min-width: 1200px) {
+    .normalcontext {
+      font-size: 4rem;
+    }
+  }
+  
+  .normalcontextsmall {
+    position: absolute;
+    /* font */
+    font-size: 2.5rem;
+    color: antiquewhite;
+    height: 40%;
+    margin-top: -1rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+    z-index: 20;
+  }
+
+  .normalcontextInButton {
+    position: absolute;
+    /* font */
+    font-size: 3rem;
+
+  
+    height: 50%;
+  
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+    z-index: 20;
+  }
+
+  .normalcontextInButtonsmall {
+    position: absolute;
+    /* font */
+    font-size: 3rem;
+  
+    height: 40%;
+    margin-top: -1rem;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+    z-index: 20;
+  }
+  
+  .btnBox {
+    position: absolute;
+    display: flex;
+    top: 25%;
+    height: 10rem;
+    width: 100%;
+    font-size: 5rem;
+    margin: 0 auto;
+  
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+    background-position: center;
+    background-size: 6rem auto;
+    background-repeat: no-repeat;
+    z-index: 8;
+  }
+  
+  .btnMenu {
+    position: absolute;
+    display: flex;
+    top: 40%;
+    height: 10rem;
+    width: 50vw;
+    font-size: 5rem;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+    background-position: center;
+    background-size: 6rem auto;
+    background-repeat: no-repeat;
+    z-index: 8;
+  }
+  @media (max-width: 1000px) {
+    .btnMenu {
+      width: 30rem;
+    }
+  }
+
+  .btnMenusmall {
+    position: absolute;
+    display: flex;
+    top: 200%;
+    height: 5rem;
+    width: 25vw;
+
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  
+    background-position: center;
+    background-size: 6rem auto;
+    background-repeat: no-repeat;
+    z-index: 8;
+  }
+
+  @media (max-width: 850px) {
+    .btnMenusmall {
+      width: 20rem;
+    }
+  }
+
+
+/* font */
+.indieflower {
+  font-family: "Indie Flower", cursive;
+}
+
+.FredokaOne {
+  font-family: 'Alfa Slab One', cursive;
+}
+

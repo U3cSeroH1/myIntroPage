@@ -25,7 +25,8 @@ export default {
 
     '@/assets/css/hoverbuttons.css',
     '@/assets/css/parallax.css',
-
+    '@/assets/css/misc.css',
+    '@/assets/css/gridbox.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

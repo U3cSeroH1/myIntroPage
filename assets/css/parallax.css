@@ -1,35 +1,39 @@
 .parallax_content{
-    display: flex;
-    /* width: 50%; */
-    padding-top: 50vh;
-    /* padding-left: 50vh; */
-    padding-bottom: 50vh;
-    /* padding-right: 50vh; */
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    background-attachment: fixed;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-  }
-  .img_bg_01{
-    background-image: url("https://unsplash.it/1100/1000");
-    /* width: 100%; */
-  }
-  .img_bg_02{
-    background-image: url("https://unsplash.it/1000/1100");
-    /* width: 100%; */
-  }
-  .img_bg_03{
-    background-image: url("https://unsplash.it/1200/1000");
-    /* width: 100%; */
-  }
-  .img_bg_04{
-    background-image: url("https://unsplash.it/1000/1200");
-    /* width: 100%; */
-  }
-  .img_bg_05{
-    background-image: url("https://unsplash.it/1000/1000");
-    /* width: 100%; */
-  }
+  display: flex;
+  /* width: 50%; */
+  padding-top: 50vh;
+  /* padding-left: 50vh; */
+  padding-bottom: 50vh;
+  /* padding-right: 50vh; */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.img_bg_01{
+  background-image: url("~/static/DSC_0082.JPG");
+  /* width: 100%; */
+}
+.img_bg_02{
+  background-image: url("~/static/create/6d4caaa7fd056ef9d34d9559223a38ef.png");
+  /* width: 100%; */
+}
+.img_bg_03{
+  background-image: url("~/static/create/5244bfdf6a68c526b027a6eda58a0d78.jpg");
+  /* width: 100%; */
+}
+.img_bg_04{
+  background-image: url("~/static/create/タイトルなし.png");
+  /* width: 100%; */
+}
+.img_bg_05{
+  background-image: url("~/static/create/OculusScreenshot1627626639.jpeg");
+  /* width: 100%; */
+}
+.img_bg_06{
+  background-color: black;
+  /* width: 100%; */
+}
