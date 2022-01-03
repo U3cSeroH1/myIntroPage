@@ -4,7 +4,7 @@
       <a href="https://github.com/U3cSeroH1" class="myNameIcon poyopoyo"></a>
     </div>
 
-    <div class="context myName fade-in">DeraPomBe's Portforio</div>
+    <div class="context myName fade-in FredokaOne">DeraPomBe's Portforio</div>
     <div class="gridcontainer">
       <div class="grid">
         <img

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Alfa+Slab+One&display=swap');
 
 .fade-in{ 
     font-size:40px;
@@ -213,7 +214,6 @@
     /* font */
     font-size: 7vw;
     color: antiquewhite;
-    font-family: "Indie Flower", cursive;
   
     width: 100%;
     justify-content: center;
@@ -228,7 +228,6 @@
     /* font */
     font-size: 4rem;
     color: antiquewhite;
-    font-family: "Indie Flower", cursive;
   
     height: 50%;
   
@@ -267,8 +266,6 @@
     /* font */
     font-size: 2.5rem;
     color: antiquewhite;
-    font-family: "Indie Flower", cursive;
-  
     height: 40%;
     margin-top: -1rem;
     width: 100%;
@@ -284,7 +281,6 @@
     /* font */
     font-size: 3rem;
 
-    font-family: "Indie Flower", cursive;
   
     height: 50%;
   
@@ -300,7 +296,6 @@
     position: absolute;
     /* font */
     font-size: 3rem;
-    font-family: "Indie Flower", cursive;
   
     height: 40%;
     margin-top: -1rem;
@@ -339,7 +334,6 @@
     width: 50vw;
     font-size: 5rem;
     margin: 0 auto;
-    font-family: "Indie Flower", cursive;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -363,7 +357,6 @@
     width: 25vw;
 
     margin: 0 auto;
-    font-family: "Indie Flower", cursive;
     justify-content: center;
     align-items: center;
     text-align: center;
@@ -379,3 +372,14 @@
       width: 20rem;
     }
   }
+
+
+/* font */
+.indieflower {
+  font-family: "Indie Flower", cursive;
+}
+
+.FredokaOne {
+  font-family: 'Alfa Slab One', cursive;
+}
+
